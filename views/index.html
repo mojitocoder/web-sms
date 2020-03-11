@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to Web SMS!</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Web app to send SMS">
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Web app to send SMS</h1>
+    </header>
+
+    <main>
+      <form>
+        <label>
+          Customer phone number:
+          <input name="phone" type="text" maxlength="100" required placeholder="+44 3330 146 683">
+        </label>
+        <label>
+          Message:
+          <textarea name="message" type="text" maxlength="500">We cannot renew your insurance policy because your credit card has expired. Please call us on 03330146683
+          </textarea>
+        </label>
+        <button type="submit" id="submit-dream">Send SMS</button>
+      </form>
+    </main>
+  </body>
+</html>
