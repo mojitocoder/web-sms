@@ -1,17 +1,6 @@
-// server.js
-// where your node app starts
-
-// we've started you off with Express (https://expressjs.com/)
-// but feel free to use whatever libraries or frameworks you'd like through `package.json`.
 const express = require("express");
 const app = express();
-
-// our default array of dreams
-const dreams = [
-  "Find and count some sheep",
-  "Climb a really tall mountain",
-  "Wash the dishes"
-];
+app.use(express.json());
 
 // make all the files in 'public' available
 // https://expressjs.com/en/starter/static-files.html
@@ -22,10 +11,12 @@ app.get("/", (request, response) => {
   response.sendFile(__dirname + "/views/index.html");
 });
 
-// send the default array of dreams to the webpage
-app.get("/dreams", (request, response) => {
-  // express helps us take JS objects and send them as JSON
-  response.json(dreams);
+app.post("/sms", (request, response) => {
+  const phone = request.body.phone;
+  const message = request.body.message;
+  console.log(`phone: ${phone}; message: ${message}`);
+
+  response.json({result: "Message has been sent"});
 });
 
 // listen for requests :)
